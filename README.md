@@ -54,30 +54,36 @@
 | `friends.custom.css` | تنسيقات قائمة الأصدقاء وغرف المحادثة والمجموعات |
 | `README.md` | دليل التثبيت والمميزات وتوثيق الحقوق الفكرية |
 | `LICENSE` | رخصة الاستخدام المفتوحة (MIT License) باسم المطوّر `iTzJok3r` |
-| `install.bat` / `install-theme.ps1` | مثبت سريع بضغطة زر واحدة لمستخدمي ويندوز |
+| `install.bat` / `install-theme.ps1` | مثبت سريع بضغطة زر واحدة لمستخدمي ويندوز (Windows) |
+| `install.sh` | مثبت تلقائي لمستخدمي لينكس وجهاز ستيم دك (Linux / SteamOS / Steam Deck) |
 
 ---
 
 ## 🚀 طريقة التثبيت (Installation Guide)
 
 ### الخطوة 1: المتطلبات
-- تأكد من تثبيت منصة **[Millennium](https://millennium.app/)** على جهازك (تدعم أحدث إصدارات Steam Client).
+- تأكد من تثبيت منصة **[Millennium](https://millennium.app/)** على جهازك (تدعم أحدث إصدارات Steam على Windows و Linux و SteamOS).
 
 ### الخطوة 2: التثبيت التلقائي (Automatic)
+
+#### 🪟 على نظام ويندوز (Windows):
 1. حمّل ملف الثيم المضغوط `steam-arabic-official-theme.zip` وفك ضغطه.
 2. اضغط مرتين على ملف `install.bat` (أو شغل `install-theme.ps1` بواسطة PowerShell).
-3. سيقوم المثبت بنسخ الملفات تلقائياً إلى مسار الثيمات في ستيم:
-   ```text
-   Steam\millennium\themes\steam-arabic-official
+
+#### 🐧 على نظام لينكس و Steam Deck (Linux / SteamOS):
+1. فك ضغط ملف الثيم في أي مجلد.
+2. افتح الطرفية (Terminal) في مجلد الثيم وشغّل الأمر التالي:
+   ```bash
+   chmod +x install.sh && ./install.sh
    ```
+   *يقوم السكريبت تلقائياً باكتشاف مسارات Steam الأصلية و Flatpak و Snap على أجهزة الكمبيوتر و Steam Deck ونسخ الملفات بدقة.*
 
 ### الخطوة 3: التثبيت اليدوي (Manual)
-1. افتح مسار تثبيت ستيم (المسار الافتراضي عادةً `C:\Program Files (x86)\Steam` أو `D:\Program Files (x86)\Steam`).
-2. انتقل إلى مجلد:
-   ```text
-   millennium\themes\
-   ```
-3. أنشئ مجلداً باسم `steam-arabic-official` وضع كافة ملفات الحزمة بداخله.
+* **على Windows:** انسخ محتويات الحزمة إلى:
+  `C:\Program Files (x86)\Steam\millennium\themes\steam-arabic-official`
+* **على Linux / SteamOS:** انسخ محتويات الحزمة إلى:
+  `~/.local/share/Steam/millennium/themes/steam-arabic-official`  
+  *(أو `~/.var/app/com.valvesoftware.Steam/.local/share/Steam/millennium/themes/steam-arabic-official` لمستخدمي Flatpak)*
 
 ### الخطوة 4: التفعيل (Activation)
 1. شغّل تطبيق **Steam**.
