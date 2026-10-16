@@ -1,0 +1,263 @@
+/**
+ * webkit.custom.css — Steam Store & Community Webviews RTL Theme
+ */
+
+html,
+html[dir="rtl"],
+body,
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: start;
+  overflow-x: hidden !important;
+  font-family: 'Segoe UI', 'Tahoma', 'Cairo', 'Noto Sans Arabic', 'Dubai', system-ui, -apple-system, sans-serif;
+}
+
+/* Store container centering and overflow prevention on wide screens */
+html[dir="rtl"] .responsive_page_frame {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+html[dir="rtl"] .responsive_page_content {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+/* Neutralize hardcoded Steam overlays that push the entire page off-center */
+html[dir="rtl"] .store_bg_overlay,
+html[dir="rtl"] .page_background_overlay,
+html[dir="rtl"] .page_background_holder,
+html[dir="rtl"] .page_background {
+  display: none !important;
+}
+
+/* Global header and navigation */
+html[dir="rtl"] #global_header,
+html[dir="rtl"] #global_footer,
+html[dir="rtl"] .responsive_page_content,
+html[dir="rtl"] .page_content {
+  direction: rtl;
+  text-align: start;
+}
+
+/* Store search bar */
+html[dir="rtl"] .store_search_area .searchbox input,
+html[dir="rtl"] #global_header .header_search_box_container input {
+  direction: rtl;
+  text-align: start;
+  padding-inline-start: 12px;
+  padding-inline-end: 28px;
+}
+
+
+
+/* Price block alignment */
+html[dir="rtl"] .game_purchase_action,
+html[dir="rtl"] .game_purchase_price,
+html[dir="rtl"] .discount_block {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+/* Directional icons in webviews */
+html[dir="rtl"] .arrow_left,
+html[dir="rtl"] .arrow_right,
+html[dir="rtl"] .page_arrow {
+  transform: scaleX(-1);
+  will-change: transform;
+}
+
+/* Account page layout and wallet balance alignment */
+html[dir="rtl"] .account_header_line,
+html[dir="rtl"] .account_table,
+html[dir="rtl"] .account_table .accountRow,
+html[dir="rtl"] .accountData {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .accountData.price,
+html[dir="rtl"] .accountData.wallet_balance,
+html[dir="rtl"] .accountDataBlock .accountData {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;
+}
+
+
+/* Store Homepage section titles & recommendation blocks RTL layout */
+html[dir="rtl"] .home_section_title,
+html[dir="rtl"] .home_recommendation_title,
+html[dir="rtl"] .home_page_section_title,
+html[dir="rtl"] .home_box_title,
+html[dir="rtl"] .module_header,
+html[dir="rtl"] .home_tab_header,
+html[dir="rtl"] .home_page_content h2,
+html[dir="rtl"] .home_page_content h3,
+html[dir="rtl"] .contenthub_maincarousel_container h2 {
+  direction: rtl !important;
+  text-align: start !important;
+  float: none !important;
+  width: auto !important;
+  overflow: visible !important;
+}
+
+html[dir="rtl"] .home_page_content,
+html[dir="rtl"] .home_page_body_ctn,
+html[dir="rtl"] .home_content,
+html[dir="rtl"] .home_ctn,
+html[dir="rtl"] .home_recommendations_area {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* Preserve LTR coordinate systems for JS-driven carousels and media widgets */
+.carousel_container,
+.carousel_items,
+.main_cluster_content,
+.main_cluster,
+.highlight_strip,
+.highlight_strip_item,
+.highlight_ctn,
+.highlight_player_item,
+.highlight_screenshot,
+#home_maincap_v6,
+.contenthub_maincarousel_container,
+.store_capsule_frame,
+.capsule,
+.game_header_image_ctn,
+[class*="carousel_container"],
+[class*="Carousel_Container"],
+[class*="main_cluster"],
+[class*="MainCluster"],
+[class*="carousel_items"],
+[class*="CarouselItems"],
+[class*="SaleCapsule"],
+[class*="carousel_"],
+[class*="Carousel_"],
+[class*="MainCap_"],
+[class*="maincap_"],
+[class*="AutoHorizontalScroll_"],
+[class*="HorizontalScroll_"],
+[class*="SaleSection_"] [class*="Carousel_"],
+.sliderTray___-vHFQ,
+[class*="sliderTray_"],
+.carousel__slider-tray {
+  direction: ltr !important;
+}
+
+/* Ensure text inside carousel info panels is RTL */
+.main_cluster_content .info,
+.main_cluster_content .app_name,
+.main_cluster_content .desc,
+.main_cluster_content .review_summary,
+.carousel_container .caption {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* Standalone popup frames must always be static and fill window */
+#popup_target,
+.popup_chat_frame,
+[class*="popup_chat_frame"] {
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Modal and Dialog RTL centering & full popup coverage */
+html.ModalDialogPopup,
+html.ModalDialogPopup body,
+html.ModalDialogPopup #popup_target,
+body.ModalDialogBody,
+body.ModalDialogBody #popup_target {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #25282e !important;
+  overflow: hidden !important;
+}
+
+.PopupFullWindow {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.PopupFullWindow .ModalPosition {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.PopupFullWindow .ModalPosition_Content {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: none !important;
+}
+
+.PopupFullWindow .ModalPosition_TopBar,
+.ModalDialogPopup .ModalPosition_TopBar,
+[class*="ModalPosition_TopBar"] {
+  display: none !important;
+}
+
+.PopupFullWindow .ModalPosition_Dismiss,
+.ModalDialogPopup .ModalPosition_Dismiss,
+[class*="ModalDialogPopup"] .closeButton:not(.title-area-icon):not(.title-area-icon > *),
+.PopupFullWindow .ModalPosition .closeButton {
+  display: none !important;
+}
+
+.PopupFullWindow .DialogContent,
+.PopupFullWindow ._DialogLayout {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.PopupFullWindow .DialogContent_InnerWidth {
+  max-width: none !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+}
+
+.Dialog_ChangePersonaName,
+[class*="Dialog_ChangePersonaName"],
+.ChangePersonaNameDialog,
+[class*="ChangePersonaNameDialog"],
+.ChangePersonaDialog {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+}
+
+
+
+
+

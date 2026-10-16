@@ -1,0 +1,660 @@
+/**
+ * libraryroot.custom.css — Steam Official Arabic Theme (RTL)
+ *
+ * Preserves Steam's authentic official aesthetic and dark palette while
+ * enabling complete Right-to-Left layout, Arabic typography, and proper
+ * element alignment across the entire Steam desktop client.
+ */
+
+:root {
+  --stl-font-arabic: 'Segoe UI', 'Tahoma', 'Cairo', 'Noto Sans Arabic', 'Dubai', system-ui, -apple-system, sans-serif;
+  --stl-color-bg: #171a21;
+  --stl-color-surface: #1b2838;
+  --stl-color-card: #212d3d;
+  --stl-color-highlight: #66c0f4;
+  --stl-color-text-primary: #e8eaed;
+  --stl-color-text-secondary: #8f98a0;
+}
+
+/* ------------------------------------------------------------------ */
+/* 1. GLOBAL ROOT & TYPOGRAPHY                                        */
+/* ------------------------------------------------------------------ */
+html,
+body,
+#root,
+.fullheight,
+[class*="steamdesktop"],
+[class*="desktopapp"] {
+  direction: rtl !important;
+  text-align: start !important;
+  font-family: var(--stl-font-arabic) !important;
+  letter-spacing: 0 !important;
+}
+
+/* Ensure all text nodes inherit proper Arabic font stack */
+button,
+input,
+optgroup,
+select,
+textarea,
+span,
+div,
+p,
+a {
+  font-family: inherit;
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. TOP NAVIGATION & HEADER CHROME                                  */
+/* ------------------------------------------------------------------ */
+
+/* Outer TitleBar: Full RTL flex layout with Windows-compliant controls */
+[class*="titlebar_TitleBar_"],
+[class*="titlebar_"] {
+  direction: rtl !important;
+  text-align: start !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+/* 1. Window controls (_ □ X): On Windows, sits securely at the top-right corner */
+[class*="WindowControls_"],
+[class*="titlebar_WindowControls_"],
+[class*="TitleBarControls_"],
+[class*="titlebarcontrols_"] {
+  order: 1 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  z-index: 2147483647 !important;
+}
+
+/* 2. Menubar: on the right (RTL), perfectly positioned next to window controls */
+[class*="titlebar_MenuBar_"],
+[class*="titlebar_TitleMenu_"],
+[class*="titlebar_Menu_"],
+[class*="menubar_"],
+[class*="MenuBar_"],
+[class*="RootMenu_"] {
+  order: 2 !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-inline-start: 8px !important;
+  margin-inline-end: 16px !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 2147483647 !important;
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+}
+
+/* ALL Titlebar buttons & menu buttons (including Steam, View, Friends, Games, Help) */
+[class*="titlebar_"] [class*="MenuButton_"],
+[class*="titlebar_"] [class*="TitleMenu_"],
+[class*="titlebar_"] [class*="SteamLogo_"],
+[class*="titlebar_"] [class*="Logo_"],
+[class*="titlebar_"] [class*="SteamMenu_"],
+[class*="titlebar_"] [class*="menu_"],
+[class*="menubar_"] [class*="MenuButton_"],
+[class*="menubar_"] [class*="Button_"],
+[class*="titlebar_"] button,
+[class*="titlebar_"] [role="button"],
+[class*="titlebar_"] [class*="Button_"],
+[class*="SuperNav_"] button,
+[class*="SuperNav_"] a {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 2147483647 !important;
+  cursor: pointer !important;
+}
+
+[class*="titlebar_"] [class*="MenuButton_"],
+[class*="titlebar_"] [class*="TitleMenu_"],
+[class*="menubar_"],
+[class*="titlebar_"] [class*="MenuButton_"] > *,
+[class*="titlebar_"] [class*="TitleMenu_"] > *,
+[class*="menubar_"] > * {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+}
+
+/* Maximized Window Titlebar Interactivity Protections */
+[class*="titlebar_IsMaximized_"] [class*="titlebar_MenuBar_"],
+[class*="isMaximized"] [class*="titlebar_MenuBar_"],
+.maximized [class*="titlebar_MenuBar_"],
+[class*="titlebar_IsMaximized_"] [class*="titlebar_TitleMenu_"],
+[class*="titlebar_IsMaximized_"] [class*="titlebar_Menu_"],
+[class*="isMaximized"] [class*="titlebar_TitleMenu_"],
+.maximized [class*="titlebar_TitleMenu_"] {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  z-index: 2147483647 !important;
+  margin-top: 4px !important;
+}
+
+[class*="titlebar_IsMaximized_"] [class*="titlebar_MenuBar_"] > *,
+[class*="isMaximized"] [class*="titlebar_MenuBar_"] > *,
+.maximized [class*="titlebar_MenuBar_"] > *,
+[class*="titlebar_IsMaximized_"] [class*="titlebar_TitleMenu_"] > *,
+.maximized [class*="titlebar_TitleMenu_"] > * {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* 3. Navigation buttons (back/forward) */
+[class*="navigation_history_"],
+[class*="NavigationHistory_"] {
+  order: 3 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin-inline-end: 16px !important;
+  flex-shrink: 0 !important;
+  -webkit-app-region: no-drag !important;
+}
+
+/* 4. SuperNav & main header navigation (Store, Library, Community, Profile): Full RTL */
+[class*="SuperNav_"],
+[class*="supernav"],
+[class*="Header_"] {
+  order: 4 !important;
+  direction: rtl !important;
+  text-align: start !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  -webkit-app-region: no-drag !important;
+}
+
+/* Ensure window drag region never overlays interactive buttons */
+[class*="WindowDragArea_"],
+[class*="titlebar_WindowDragArea_"],
+[class*="drag_area"],
+[class*="TitleBar_"] [class*="DragArea_"] {
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Window controls (minimize, maximize, close) */
+[class*="WindowControls_"],
+[class*="titlebar_WindowControls_"] {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  z-index: 2147483647 !important;
+}
+
+[class*="TitleBarControls_"],
+[class*="titlebarcontrols_"] {
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 99999 !important;
+}
+
+/* Dropdown popups & context menus: Full RTL aligned */
+[class*="titlebar_MenuPopup_"],
+[class*="MenuPopup_"],
+[class*="menu_popup_"],
+[class*="contextmenu_"],
+[class*="ContextMenu_"],
+[class*="contextmenu_popup_"],
+[class*="ContextMenuPopup_"],
+[class*="dropdown_popup_"],
+[class*="DropdownPopup_"] {
+  direction: rtl !important;
+  text-align: start !important;
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
+}
+
+/* Standalone popup frames must always be static and fill window */
+#popup_target,
+.popup_chat_frame,
+[class*="popup_chat_frame"] {
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+
+/* Supernav navigation items (STORE, LIBRARY, COMMUNITY, PROFILE) */
+[class*="SuperNav_"] [class*="MenuContent"],
+[class*="SuperNav_"] [class*="NavItems"],
+[class*="supernav"] [class*="content"] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+/* 5. Account avatar, wallet, and notifications: pushed gracefully to the left */
+[class*="TitleBar_"] [class*="AccountArea_"],
+[class*="titlebar_AccountArea_"],
+[class*="supernav"] [class*="account"] {
+  order: 5 !important;
+  margin-inline-start: auto !important;
+  margin-inline-end: 12px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+  -webkit-app-region: no-drag !important;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* 3. LIBRARY SIDEBAR & GAME LIST                                     */
+/* ------------------------------------------------------------------ */
+[class*="libraryhome_"],
+[class*="library_"],
+[class*="gamelistbar_"],
+[class*="GameListBar_"],
+[class*="gamelist_"],
+[class*="GameList_"],
+[class*="gamelistentry_"] {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* Sidebar split view container */
+[class*="libraryroot_LibraryRoot_"],
+[class*="applayout_AppLayout_"] {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+/* Game search box inside library */
+[class*="gamelistsearchbar_"],
+[class*="GameListSearchBar_"] {
+  direction: rtl !important;
+}
+
+[class*="gamelistsearchbar_"] input,
+[class*="GameListSearchBar_"] input {
+  direction: rtl !important;
+  text-align: start !important;
+  padding-inline-start: 12px !important;
+  padding-inline-end: 28px !important;
+}
+
+/* Game count badges & icons inside library items */
+[class*="gamelistentry_Container_"] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  padding-inline-start: 8px !important;
+  padding-inline-end: 8px !important;
+}
+
+[class*="gamelistentry_GameIcon_"] {
+  margin-inline-end: 8px !important;
+  margin-inline-start: 0 !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. GAME DETAILS & HERO SECTION                                     */
+/* ------------------------------------------------------------------ */
+[class*="appdetails_"],
+[class*="AppDetails_"],
+[class*="appdetailsprimarysection_"],
+[class*="gameoverview_"] {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* Play/Install action bar */
+[class*="appactionandstickyheader_"],
+[class*="AppAction_"],
+[class*="playbutton_PlayButton_"] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+/* Play button icon & label layout */
+[class*="playbutton_PlayButton_"] {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+}
+
+[class*="playbutton_PlayButton_"] svg {
+  margin-inline-end: 8px !important;
+  margin-inline-start: 0 !important;
+}
+
+/* Game stats / playtime row */
+[class*="appdetailssection_"],
+[class*="activityfeed_"] {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+
+/* Game Details Action Bar & Stats RTL Alignment */
+
+/* Hero Stats Bar: Spacious & balanced RTL layout */
+[class*="gameactionandstats_"],
+[class*="appactionandstickyheader_"],
+[class*="playbar_"],
+[class*="PlayBar_"] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+[class*="gameactionandstats_"] [class*="stats_"],
+[class*="playbar_"] [class*="stats_"],
+[class*="PlayBar_"] [class*="Stats_"],
+[class*="appactionandstickyheader_"] [class*="stats_"] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 32px !important;
+  margin-inline-start: 20px !important;
+  margin-inline-end: 28px !important;
+}
+
+[class*="gameactionandstats_"] [class*="stat_"],
+[class*="playtimestats_"],
+[class*="achievementstats_"],
+[class*="cloudstats_"],
+[class*="spacestats_"],
+[class*="appdetailsprimarysection_"] [class*="stat_"] {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-inline-end: 28px !important;
+  margin-inline-start: 0 !important;
+}
+
+/* Stat icons (Clock, Badge, Cloud, HDD) spacing */
+[class*="gameactionandstats_"] svg,
+[class*="playtimestats_"] svg,
+[class*="achievementstats_"] svg,
+[class*="stats_"] svg,
+[class*="stat_"] svg {
+  margin-inline-start: 10px !important;
+  margin-inline-end: 0 !important;
+}
+
+
+/* Secondary Links Bar (Store Page, DLC, Community, Guides, Support) */
+[class*="appdetails_"] [class*="LinksRow_"],
+[class*="appdetails_"] [class*="links_"],
+[class*="appdetails_"] [class*="gameoverview_"] [class*="links_"] {
+  display: flex !important;
+  flex-direction: row !important;
+  direction: rtl !important;
+  gap: 16px !important;
+}
+
+/* Friends Who Play & News Carousel RTL */
+[class*="friendsplaysection_"],
+[class*="friendswhoplay_"],
+[class*="spotlight_"],
+[class*="eventfeed_"],
+[class*="activityfeed_"] {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+
+/* Achievement descriptions, activity cards & news text isolation */
+[class*="achievement_"],
+[class*="Achievement_"],
+[class*="achievementdescription_"],
+[class*="AchievementDescription_"],
+[class*="activityfeed_"] [class*="content_"],
+[class*="activityfeed_"] p,
+[class*="eventfeed_"] [class*="summary_"],
+[class*="eventfeed_"] [class*="body_"],
+[class*="spotlight_"] [class*="summary_"] {
+  unicode-bidi: plaintext !important;
+  text-align: start !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. DOWNLOADS MANAGER                                               */
+/* ------------------------------------------------------------------ */
+[class*="downloads_"],
+[class*="Downloads_"],
+[class*="downloadgraph_"] {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+[class*="downloads_"] [class*="TopBar_"] {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. SETTINGS & DIALOG POPUPS                                        */
+/* ------------------------------------------------------------------ */
+[class*="settings_"],
+[class*="Settings_"],
+[class*="Dialog_"],
+[class*="Modal_"],
+[class*="ModalPosition_"],
+[class*="ContextMenu_"],
+[class*="Menu_"] {
+  direction: rtl !important;
+  text-align: start !important;
+  font-family: var(--stl-font-arabic) !important;
+}
+
+/* Settings sidebar tabs list */
+[class*="settings_Settings_"] [class*="PageList_"],
+[class*="Settings_PageList_"] {
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-inline-start: none !important;
+}
+
+/* Modal and Dialog RTL centering & full popup coverage */
+html.ModalDialogPopup,
+html.ModalDialogPopup body,
+html.ModalDialogPopup #popup_target,
+body.ModalDialogBody,
+body.ModalDialogBody #popup_target {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #25282e !important;
+  overflow: hidden !important;
+}
+
+.PopupFullWindow {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.PopupFullWindow .ModalPosition {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.PopupFullWindow .ModalPosition_Content {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: none !important;
+}
+
+.PopupFullWindow .ModalPosition_TopBar,
+.ModalDialogPopup .ModalPosition_TopBar,
+[class*="ModalPosition_TopBar"] {
+  display: none !important;
+}
+
+.PopupFullWindow .ModalPosition_Dismiss,
+.ModalDialogPopup .ModalPosition_Dismiss,
+[class*="ModalDialogPopup"] .closeButton:not(.title-area-icon):not(.title-area-icon > *),
+.PopupFullWindow .ModalPosition .closeButton {
+  display: none !important;
+}
+
+.PopupFullWindow .DialogContent,
+.PopupFullWindow ._DialogLayout {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.PopupFullWindow .DialogContent_InnerWidth {
+  max-width: none !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+}
+
+.Dialog_ChangePersonaName,
+[class*="Dialog_ChangePersonaName"],
+.ChangePersonaNameDialog,
+[class*="ChangePersonaNameDialog"],
+.ChangePersonaDialog {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* 7. BIDIRECTIONAL ISOLATION (NUMBERS, PRICES, KEYS, URLS)           */
+/* ------------------------------------------------------------------ */
+span[dir="ltr"],
+.stl-ltr,
+[class*="Price"],
+[class*="price"],
+[class*="discount"],
+[class*="Discount"],
+[class*="Number"],
+[class*="number"],
+[class*="Version"],
+[class*="version"],
+[class*="Timer"],
+[class*="timer"] {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* 8. DIRECTIONAL ICON MIRRORING                                      */
+/* ------------------------------------------------------------------ */
+/* Mirror only directional icons (back, forward, previous, next, arrows) */
+[class*="ic_arrow_back"],
+[class*="ic_arrow_forward"],
+[class*="ic_chevronleft"],
+[class*="ic_chevronright"],
+[class*="chevron_left"],
+[class*="chevron_right"],
+[class*="arrow_back"],
+[class*="arrow_forward"],
+[class*="arrow_left"],
+[class*="arrow_right"],
+[class*="pagination_prev"],
+[class*="pagination_next"],
+[class*="NavBack_"],
+[class*="NavForward_"] {
+  transform: scaleX(-1) !important;
+  will-change: transform;
+}
+
+/* Universal icons protected against accidental mirroring */
+[class*="ic_play"],
+[class*="play_"],
+[class*="download_"],
+[class*="settings_"],
+[class*="gear_"],
+[class*="refresh_"],
+[class*="search_"],
+[class*="close_"],
+[class*="plus_"],
+[class*="star_"],
+[class*="bell_"],
+[class*="heart_"] {
+  transform: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 9. SCROLLBARS                                                      */
+/* ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ------------------------------------------------------------------ */
+/* Downloads Item Action Buttons Spacing (Download / X cancel buttons) */
+/* ------------------------------------------------------------------ */
+[class*="downloaditem_"] [class*="Buttons_"],
+[class*="downloaditem_"] [class*="ActionButtons_"],
+[class*="downloaditem_"] [class*="actions_"],
+[class*="downloaditem_"] [class*="RightDetails_"] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+[class*="downloaditem_"] button,
+[class*="downloaditem_"] [role="button"],
+[class*="downloads_"] [class*="SectionList_"] [role="button"] {
+  margin: 0 4px !important;
+}

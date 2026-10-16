@@ -1,0 +1,145 @@
+/**
+ * friends.custom.css — Steam Friends & Chat Arabic RTL Theme
+ */
+
+html,
+body,
+[class*="friendsui-container"],
+[class*="chat_"] {
+  direction: rtl !important;
+  text-align: start !important;
+  font-family: 'Segoe UI', 'Tahoma', 'Cairo', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif !important;
+}
+
+/* Friend list rows */
+[class*="friendlist_"],
+[class*="friend_"],
+[class*="FriendGroup_"] {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+[class*="friend_avatar"],
+[class*="avatar_"] {
+  margin-inline-end: 8px !important;
+  margin-inline-start: 0 !important;
+}
+
+/* Chat text messages */
+[class*="chat_message_text"],
+[class*="MessageBody"] {
+  text-align: start !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Status dots & indicators */
+[class*="status_indicator"],
+[class*="Status_"] {
+  margin-inline-start: 4px !important;
+  margin-inline-end: 0 !important;
+}
+
+/* Input entry field */
+[class*="chat_input"] textarea,
+[class*="chat_input"] input {
+  direction: rtl !important;
+  text-align: start !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Standalone popup frames must always be static and fill window */
+#popup_target,
+.popup_chat_frame,
+[class*="popup_chat_frame"] {
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Modal and Dialog RTL centering & full popup coverage */
+html.ModalDialogPopup,
+html.ModalDialogPopup body,
+html.ModalDialogPopup #popup_target,
+body.ModalDialogBody,
+body.ModalDialogBody #popup_target {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #25282e !important;
+  overflow: hidden !important;
+}
+
+.PopupFullWindow {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.PopupFullWindow .ModalPosition {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.PopupFullWindow .ModalPosition_Content {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: none !important;
+}
+
+.PopupFullWindow .ModalPosition_TopBar,
+.ModalDialogPopup .ModalPosition_TopBar,
+[class*="ModalPosition_TopBar"] {
+  display: none !important;
+}
+
+.PopupFullWindow .ModalPosition_Dismiss,
+.ModalDialogPopup .ModalPosition_Dismiss,
+[class*="ModalDialogPopup"] .closeButton:not(.title-area-icon):not(.title-area-icon > *),
+.PopupFullWindow .ModalPosition .closeButton {
+  display: none !important;
+}
+
+.PopupFullWindow .DialogContent,
+.PopupFullWindow ._DialogLayout {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.PopupFullWindow .DialogContent_InnerWidth {
+  max-width: none !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+}
+
+.Dialog_ChangePersonaName,
+[class*="Dialog_ChangePersonaName"],
+.ChangePersonaNameDialog,
+[class*="ChangePersonaNameDialog"],
+.ChangePersonaDialog {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+}
+
+
+
