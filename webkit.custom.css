@@ -261,3 +261,217 @@ body.ModalDialogBody #popup_target {
 
 
 
+
+/* ------------------------------------------------------------------ */
+/* Steam Workshop & Community RTL Layout Normalization                */
+/* ------------------------------------------------------------------ */
+
+/* Workshop page frame & columns */
+html[dir="rtl"] #workshop_home,
+html[dir="rtl"] .workshop_home,
+html[dir="rtl"] .workshop_home_content,
+html[dir="rtl"] .workshop_content,
+html[dir="rtl"] .workshop_section,
+html[dir="rtl"] .apphub_CardContainer {
+  direction: rtl !important;
+  text-align: start !important;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Workshop & Community left/right columns */
+html[dir="rtl"] .leftcol,
+html[dir="rtl"] .workshop_main_content,
+html[dir="rtl"] #workshop_main_content,
+html[dir="rtl"] .apphub_LeftColumn {
+  float: right !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 16px !important;
+  box-sizing: border-box !important;
+}
+
+html[dir="rtl"] .rightcol,
+html[dir="rtl"] .workshop_sidebar,
+html[dir="rtl"] #workshop_sidebar,
+html[dir="rtl"] .apphub_RightColumn {
+  float: left !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin-inline-start: 16px !important;
+  margin-inline-end: 0 !important;
+  margin-left: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Workshop Item grid cards */
+html[dir="rtl"] .workshopItem,
+html[dir="rtl"] .workshop_item,
+html[dir="rtl"] .workshop_game_capsule,
+html[dir="rtl"] .workshop_browse_filters {
+  float: right !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 12px !important;
+  box-sizing: border-box !important;
+}
+
+html[dir="rtl"] .workshopItemTitle,
+html[dir="rtl"] .workshopItemAuthor,
+html[dir="rtl"] .workshopItemDetails {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .workshopItemAuthor .playerAvatar {
+  float: right !important;
+  margin-inline-end: 8px !important;
+  margin-inline-start: 0 !important;
+}
+
+/* Workshop search box & submit button */
+html[dir="rtl"] .workshop_search_area input,
+html[dir="rtl"] #workshopSearchText {
+  direction: rtl !important;
+  text-align: start !important;
+  padding-inline-start: 12px !important;
+  padding-inline-end: 28px !important;
+}
+
+/* Buttons with sprites / innerfade padding fixes */
+html[dir="rtl"] .btn_green_white_innerfade,
+html[dir="rtl"] .btn_darkblue_white_innerfade,
+html[dir="rtl"] .btn_grey_white_innerfade,
+html[dir="rtl"] .btn_medium,
+html[dir="rtl"] .btn_small {
+  max-width: none !important;
+  width: auto !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+html[dir="rtl"] .btn_green_white_innerfade > span,
+html[dir="rtl"] .btn_darkblue_white_innerfade > span,
+html[dir="rtl"] .btn_grey_white_innerfade > span {
+  padding-inline: 14px !important;
+  overflow: visible !important;
+  text-align: center !important;
+}
+
+/* Screenshots, Friends & Inventory layouts */
+html[dir="rtl"] .screenshot_nav,
+html[dir="rtl"] .screenshot_filter,
+html[dir="rtl"] .friends_nav,
+html[dir="rtl"] .friends_header_ctn,
+html[dir="rtl"] .group_content,
+html[dir="rtl"] .inventory_page {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .friends_header_ctn .manage_friends_btn {
+  float: left !important;
+  margin-inline-start: 8px !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* Precise Workshop & Market RTL Grid Overrides                       */
+/* ------------------------------------------------------------------ */
+
+/* Workshop Home 4-Column Grid: prevent 4th card dropping */
+html[dir="rtl"] .browseApps {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+}
+
+html[dir="rtl"] .workshopAppsSort {
+  float: none !important;
+  width: 180px !important;
+  flex: 0 0 180px !important;
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .workshopApps {
+  float: none !important;
+  width: 740px !important;
+  flex: 0 0 740px !important;
+  direction: rtl !important;
+  box-sizing: border-box !important;
+}
+
+html[dir="rtl"] .workshop_game_capsule,
+html[dir="rtl"] .workshopApps .workshop_game_capsule {
+  float: right !important;
+  margin-left: 12px !important;
+  margin-right: 0 !important;
+  margin-bottom: 12px !important;
+}
+
+html[dir="rtl"] .workshop_game_capsule:nth-child(4n),
+html[dir="rtl"] .workshopApps .workshop_game_capsule:nth-child(4n) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Workshop item card details */
+html[dir="rtl"] .workshop_game_capsule .details {
+  direction: rtl !important;
+  text-align: center !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Community Market: flip sidebar and table columns to prevent overlap */
+html[dir="rtl"] #sideBar {
+  float: left !important;
+  margin-left: 0 !important;
+  margin-right: 16px !important;
+  width: 295px !important;
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] #popularItems,
+html[dir="rtl"] #mainContents,
+html[dir="rtl"] #sellListings,
+html[dir="rtl"] #myMarketTabs,
+html[dir="rtl"] .market_listing_table {
+  float: right !important;
+  margin-right: 0 !important;
+  margin-left: 16px !important;
+  max-width: calc(100% - 320px) !important;
+  box-sizing: border-box !important;
+}
+
+html[dir="rtl"] .market_tab_well_tabs {
+  direction: rtl !important;
+  text-align: start !important;
+  right: 0 !important;
+  left: auto !important;
+}
+
+html[dir="rtl"] .market_tab_well_tab {
+  float: right !important;
+}
+
+/* English item names in market listings stay LTR start-aligned */
+html[dir="rtl"] .market_listing_item_name_block,
+html[dir="rtl"] .market_listing_item_name,
+html[dir="rtl"] .market_listing_game_name {
+  text-align: start !important;
+  direction: ltr !important;
+  unicode-bidi: plaintext !important;
+}
+
+html[dir="rtl"] .market_listing_price_listings_block {
+  text-align: start !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}

@@ -143,3 +143,28 @@ body.ModalDialogBody #popup_target {
 
 
 
+
+/* Chat hover action buttons: move to start/left to prevent overlapping avatar & text */
+[class*="chat_message_"] {
+  position: relative !important;
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+[class*="chat_message_actions"],
+[class*="action_buttons"],
+[class*="contextMenuButton"],
+[class*="ReactionPicker"] {
+  inset-inline-start: 12px !important;
+  inset-inline-end: auto !important;
+  left: 12px !important;
+  right: auto !important;
+}
+
+[class*="chat_message_text"],
+[class*="MessageBody"],
+[class*="chat_message_body"] {
+  text-align: start !important;
+  unicode-bidi: plaintext !important;
+  padding-inline-end: 60px !important;
+}
