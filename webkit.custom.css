@@ -705,29 +705,32 @@ html[dir="rtl"] #tabcontent_inventory {
   text-align: start !important;
 }
 
-/* Item grid container: in RTL, sits on the right (start side) */
-html[dir="rtl"] .view_inventory_page .inventory_page_left {
-  float: right !important;
-  width: 528px !important;
-  direction: rtl !important;
-  text-align: start !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 16px !important;
-  margin-right: 0 !important;
-  margin-left: 16px !important;
-}
-
-/* Item details pane: in RTL, sits on the left (end side) */
+/* Item details pane: in RTL, floats to the left with zero extra margin to fit 906px container */
 html[dir="rtl"] .view_inventory_page .inventory_page_right {
   float: left !important;
   width: 370px !important;
   direction: rtl !important;
   text-align: start !important;
-  margin-inline-start: 16px !important;
-  margin-inline-end: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin: 0 !important;
   position: relative !important;
+}
+
+/* Item grid container: in RTL, floats to the right with zero extra margin (528px + 370px = 898px <= 906px) */
+html[dir="rtl"] .view_inventory_page .inventory_page_left {
+  float: right !important;
+  width: 528px !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin: 0 !important;
+}
+
+/* Responsive mode resets for inventory columns */
+html[dir="rtl"].responsive .view_inventory_page .inventory_page_left,
+html[dir="rtl"].responsive .view_inventory_page .inventory_page_right,
+html[dir="rtl"] body.responsive_page .view_inventory_page .inventory_page_left,
+html[dir="rtl"] body.responsive_page .view_inventory_page .inventory_page_right {
+  float: none !important;
+  width: auto !important;
 }
 
 /* Clearfix for inventory container */
@@ -737,11 +740,9 @@ html[dir="rtl"] .view_inventory_page:after {
   clear: both !important;
 }
 
-/* 2. Inventory Item Slots Grid */
-html[dir="rtl"] .itemHolder {
+/* 2. Inventory Item Slots Grid: float right only in non-responsive desktop view */
+html[dir="rtl"]:not(.responsive) .itemHolder {
   float: right !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 6px !important;
   margin-right: 0 !important;
   margin-left: 6px !important;
   margin-bottom: 6px !important;
@@ -859,7 +860,7 @@ html[dir="rtl"] #inventory_pagecontrols {
 }
 
 html[dir="rtl"] #inventory_pagecontrols .pagecontrol_element {
-  float: right !important;
+  float: left !important;
 }
 
 html[dir="rtl"] .pagecontrol_element.pagecounts {
@@ -876,7 +877,6 @@ html[dir="rtl"] .inventory_iteminfo {
 html[dir="rtl"] .item_desc_content {
   direction: rtl !important;
   text-align: start !important;
-  padding: 238px 11px 11px 11px !important;
 }
 
 html[dir="rtl"] .item_desc_content .item_desc_description {
@@ -992,7 +992,8 @@ html[dir="rtl"] .trade_item_box .itemHolder {
 }
 
 /* 9. Steam Profile Two-Column Layout & Badges */
-html[dir="rtl"] .profile_leftcol {
+html[dir="rtl"]:not(.responsive) .profile_leftcol,
+html[dir="rtl"] body:not(.responsive_page) .profile_leftcol {
   float: right !important;
   width: 652px !important;
   direction: rtl !important;
@@ -1001,14 +1002,24 @@ html[dir="rtl"] .profile_leftcol {
   margin-right: 0 !important;
 }
 
-html[dir="rtl"] .profile_rightcol,
-html[dir="rtl"] #rightContents {
+html[dir="rtl"]:not(.responsive) .profile_rightcol,
+html[dir="rtl"]:not(.responsive) #rightContents,
+html[dir="rtl"] body:not(.responsive_page) .profile_rightcol,
+html[dir="rtl"] body:not(.responsive_page) #rightContents {
   float: left !important;
   width: 268px !important;
   direction: rtl !important;
   text-align: start !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+}
+
+html[dir="rtl"].responsive .profile_leftcol,
+html[dir="rtl"].responsive .profile_rightcol,
+html[dir="rtl"] body.responsive_page .profile_leftcol,
+html[dir="rtl"] body.responsive_page .profile_rightcol {
+  float: none !important;
+  width: auto !important;
 }
 
 html[dir="rtl"] .profile_content:after {

@@ -20,6 +20,15 @@
     document.documentElement.setAttribute('lang', 'ar');
   }
 
+  // If the Millennium plugin is installed and active, let the plugin handle DOM translation
+  // to prevent dual-engine MutationObserver conflicts and high CPU usage.
+  if (typeof window !== 'undefined' && window.__stlPluginActive) {
+    ensureTitleBarInteractivity();
+    window.addEventListener('resize', ensureTitleBarInteractivity, { passive: true });
+    window.addEventListener('focus', ensureTitleBarInteractivity, { passive: true });
+    return;
+  }
+
   const UI_DICTIONARY = {
   "Now Available": "متوفر الآن",
   "Now Available.": "متوفر الآن.",
@@ -49304,27 +49313,40 @@ body.ModalDialogBody #popup_target {
   window.addEventListener('resize', ensureTitleBarInteractivity, { passive: true });
   window.addEventListener('focus', ensureTitleBarInteractivity, { passive: true });
 
-  // ─── Instant & synchronous MutationObserver ───────────────────────────────
-  // Translates nodes as soon as Chromium inserts them into the DOM,
-  // before the first paint occurs. Eliminates layout flash and latency.
+  // ─── Instant & synchronous MutationObserver (with loop guards) ───────────
+  let _themeTranslating = false;
   const observer = new MutationObserver((mutations) => {
-    for (let i = 0; i < mutations.length; i++) {
-      const m = mutations[i];
-      if (m.type === 'childList') {
-        const added = m.addedNodes;
-        for (let j = 0; j < added.length; j++) {
-          const node = added[j];
-          if (node.nodeType === 1) {
-            walkDOM(node);
-          } else if (node.nodeType === 3) {
-            translateNode(node);
+    if (typeof window !== 'undefined' && window.__stlPluginActive) {
+      observer.disconnect();
+      return;
+    }
+    if (_themeTranslating) return;
+    _themeTranslating = true;
+    try {
+      for (let i = 0; i < mutations.length; i++) {
+        const m = mutations[i];
+        if (m.type === 'childList') {
+          const added = m.addedNodes;
+          for (let j = 0; j < added.length; j++) {
+            const node = added[j];
+            if (node.nodeType === 1) {
+              walkDOM(node);
+            } else if (node.nodeType === 3) {
+              translateNode(node);
+            }
           }
+        } else if (m.type === 'characterData') {
+          translateNode(m.target);
         }
-      } else if (m.type === 'characterData') {
-        translateNode(m.target);
       }
+    } finally {
+      _themeTranslating = false;
     }
   });
+
+  if (typeof window !== 'undefined') {
+    window.__stlThemeObserver = observer;
+  }
 
   observer.observe(document.documentElement || document.body, {
     childList: true,
