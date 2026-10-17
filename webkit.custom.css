@@ -158,9 +158,28 @@ html[dir="rtl"] .home_recommendations_area {
 .main_cluster_content .app_name,
 .main_cluster_content .desc,
 .main_cluster_content .review_summary,
-.carousel_container .caption {
+.carousel_container .caption,
+.store_main_capsule .info,
+.store_main_capsule .info_ctn,
+.store_main_capsule .app_name,
+.store_main_capsule .reason,
+.store_main_capsule .data_ctn {
   direction: rtl !important;
   text-align: start !important;
+}
+
+.store_main_capsule .screenshots {
+  direction: ltr !important;
+}
+
+/* Carousel navigation arrows: Left button always points left, Right button always points right */
+.carousel_container .arrow.left > div,
+.carousel_container .arrow_left > div {
+  transform: rotate(180deg) !important;
+}
+.carousel_container .arrow.right > div,
+.carousel_container .arrow_right > div {
+  transform: none !important;
 }
 
 /* Standalone popup frames must always be static and fill window */

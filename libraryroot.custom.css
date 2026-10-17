@@ -62,11 +62,8 @@ a {
 
 /* 1. Window controls (_ □ X): On Windows, sits securely at the top-right corner */
 .qP17eBPXkfezFfexZ4hC3,
-._1-9sir4j_KQiMqdkZjQN0u,
 [class*="WindowControls_"],
-[class*="titlebar_WindowControls_"],
-[class*="TitleBarControls_"],
-[class*="titlebarcontrols_"] {
+[class*="titlebar_WindowControls_"] {
   order: 1 !important;
   display: flex !important;
   flex-direction: row !important;
@@ -76,6 +73,18 @@ a {
   -webkit-app-region: no-drag !important;
   pointer-events: auto !important;
   z-index: 2147483647 !important;
+}
+
+/* TitleBar extra controls (VR, etc.): Placed to the left */
+._1-9sir4j_KQiMqdkZjQN0u,
+[class*="TitleBarControls_"],
+[class*="titlebarcontrols_"] {
+  order: 4 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  -webkit-app-region: no-drag !important;
+  pointer-events: auto !important;
 }
 
 /* 2. Menubar: on the right (RTL), perfectly positioned next to window controls */
@@ -220,6 +229,8 @@ body.Maximized ._3s0lkohH8wU2do0K1il28Y *,
 [class*="titlebar_WindowDragArea_"],
 [class*="drag_area"],
 [class*="TitleBar_"] [class*="DragArea_"] {
+  order: 3 !important;
+  flex: 1 1 auto !important;
   pointer-events: none !important;
   z-index: 0 !important;
 }

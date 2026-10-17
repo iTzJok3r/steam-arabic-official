@@ -49171,13 +49171,18 @@
         da.style.setProperty('pointer-events', 'none', 'important');
         da.style.setProperty('z-index', '0', 'important');
       });
-      const chromeLtr = document.querySelectorAll('._39oUCO1OuizVPwcnnv88no, ._3Z7VQ1IMk4E3HsHvrkLNgo, .qP17eBPXkfezFfexZ4hC3, ._1-9sir4j_KQiMqdkZjQN0u, .TitleBar, .title-bar-actions, .title-area, .titleBarContainer, .chatTitleBar');
-      chromeLtr.forEach((el) => {
-        if (el.style.getPropertyValue('direction') !== 'ltr') {
-          el.style.setProperty('direction', 'ltr', 'important');
+      const storeImages = document.querySelectorAll('*[data-background-image-url]:not([style*="background-image"])');
+      storeImages.forEach((el) => {
+        const bg = el.getAttribute('data-background-image-url');
+        if (bg) {
+          el.style.setProperty('background-image', 'url(' + bg + ')', 'important');
         }
-        if (el.getAttribute('dir') !== 'ltr') {
-          el.setAttribute('dir', 'ltr');
+      });
+      const storeImgs = document.querySelectorAll('img[data-image-url]:not([src]), img[data-image-url][src*="blank.gif"]');
+      storeImgs.forEach((img) => {
+        const src = img.getAttribute('data-image-url');
+        if (src) {
+          img.setAttribute('src', src);
         }
       });
     } catch (_) {}
