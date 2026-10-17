@@ -49146,27 +49146,39 @@
 
   function ensureTitleBarInteractivity() {
     try {
-      const menubars = document.querySelectorAll('[class*="titlebar_MenuBar_"], [class*="titlebar_TitleMenu_"], [class*="titlebar_Menu_"], [class*="menubar_"], [class*="MenuBar_"], [class*="RootMenu_"]');
+      const menubars = document.querySelectorAll('._3s0lkohH8wU2do0K1il28Y, ._1Ky59qmywxOUtNcI1cgmkX, ._2Lu3d-5qLmW4i19ysTt2jT, [class*="titlebar_MenuBar_"], [class*="titlebar_TitleMenu_"], [class*="titlebar_Menu_"], [class*="menubar_"], [class*="MenuBar_"], [class*="RootMenu_"]');
       menubars.forEach((mb) => {
         mb.style.setProperty('-webkit-app-region', 'no-drag', 'important');
         mb.style.setProperty('pointer-events', 'auto', 'important');
         mb.style.setProperty('z-index', '2147483647', 'important');
+        mb.style.setProperty('margin-top', '0px', 'important');
+        mb.style.setProperty('top', '0px', 'important');
       });
-      const buttons = document.querySelectorAll('[class*="titlebar_MenuButton_"], [class*="TitleMenu_"], [class*="MenuBar_"] > *, [class*="titlebar_"] [class*="menu_"], [class*="titlebar_"] button, [class*="titlebar_"] [role="button"], [class*="titlebar_"] [class*="Button_"], [class*="titlebar_"] a');
+      const buttons = document.querySelectorAll('.bSKGlAJG2UVWTsntEJY2v, ._2UyOBeiSdBayaFdRa39N2O, .GG9wVQz6PLlhGHlJyZh4E, [class*="titlebar_MenuButton_"], [class*="TitleMenu_"], [class*="MenuBar_"] > *, [class*="titlebar_"] [class*="menu_"], [class*="titlebar_"] button, [class*="titlebar_"] [role="button"], [class*="titlebar_"] [class*="Button_"], [class*="titlebar_"] a');
       buttons.forEach((btn) => {
         btn.style.setProperty('-webkit-app-region', 'no-drag', 'important');
         btn.style.setProperty('pointer-events', 'auto', 'important');
         btn.style.setProperty('z-index', '2147483647', 'important');
+        btn.style.setProperty('margin-top', '0px', 'important');
         const children = btn.querySelectorAll('*');
         children.forEach((c) => {
           c.style.setProperty('-webkit-app-region', 'no-drag', 'important');
           c.style.setProperty('pointer-events', 'auto', 'important');
         });
       });
-      const dragAreas = document.querySelectorAll('[class*="WindowDragArea_"], [class*="drag_area"], [class*="TitleBar_"] [class*="DragArea_"]');
+      const dragAreas = document.querySelectorAll('._30vB9DdsPK7VrZAbb5Q1Av, [class*="WindowDragArea_"], [class*="drag_area"], [class*="TitleBar_"] [class*="DragArea_"]');
       dragAreas.forEach((da) => {
         da.style.setProperty('pointer-events', 'none', 'important');
         da.style.setProperty('z-index', '0', 'important');
+      });
+      const chromeLtr = document.querySelectorAll('._39oUCO1OuizVPwcnnv88no, ._3Z7VQ1IMk4E3HsHvrkLNgo, .qP17eBPXkfezFfexZ4hC3, ._1-9sir4j_KQiMqdkZjQN0u, .TitleBar, .title-bar-actions, .title-area, .titleBarContainer, .chatTitleBar');
+      chromeLtr.forEach((el) => {
+        if (el.style.getPropertyValue('direction') !== 'ltr') {
+          el.style.setProperty('direction', 'ltr', 'important');
+        }
+        if (el.getAttribute('dir') !== 'ltr') {
+          el.setAttribute('dir', 'ltr');
+        }
       });
     } catch (_) {}
   }

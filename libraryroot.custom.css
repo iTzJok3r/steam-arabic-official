@@ -49,6 +49,7 @@ a {
 /* ------------------------------------------------------------------ */
 
 /* Outer TitleBar: Full RTL flex layout with Windows-compliant controls */
+._39oUCO1OuizVPwcnnv88no,
 [class*="titlebar_TitleBar_"],
 [class*="titlebar_"] {
   direction: rtl !important;
@@ -60,6 +61,8 @@ a {
 }
 
 /* 1. Window controls (_ □ X): On Windows, sits securely at the top-right corner */
+.qP17eBPXkfezFfexZ4hC3,
+._1-9sir4j_KQiMqdkZjQN0u,
 [class*="WindowControls_"],
 [class*="titlebar_WindowControls_"],
 [class*="TitleBarControls_"],
@@ -76,6 +79,9 @@ a {
 }
 
 /* 2. Menubar: on the right (RTL), perfectly positioned next to window controls */
+._3s0lkohH8wU2do0K1il28Y,
+._1Ky59qmywxOUtNcI1cgmkX,
+._2Lu3d-5qLmW4i19ysTt2jT,
 [class*="titlebar_MenuBar_"],
 [class*="titlebar_TitleMenu_"],
 [class*="titlebar_Menu_"],
@@ -89,6 +95,8 @@ a {
   gap: 8px !important;
   margin-inline-start: 8px !important;
   margin-inline-end: 16px !important;
+  margin-top: 0 !important;
+  top: 0 !important;
   flex-shrink: 0 !important;
   position: relative !important;
   z-index: 2147483647 !important;
@@ -97,6 +105,12 @@ a {
 }
 
 /* ALL Titlebar buttons & menu buttons (including Steam, View, Friends, Games, Help) */
+._2UyOBeiSdBayaFdRa39N2O,
+.bSKGlAJG2UVWTsntEJY2v,
+.GG9wVQz6PLlhGHlJyZh4E,
+._3s0lkohH8wU2do0K1il28Y *,
+._1Ky59qmywxOUtNcI1cgmkX *,
+._2Lu3d-5qLmW4i19ysTt2jT *,
 [class*="titlebar_"] [class*="MenuButton_"],
 [class*="titlebar_"] [class*="TitleMenu_"],
 [class*="titlebar_"] [class*="SteamLogo_"],
@@ -115,6 +129,7 @@ a {
   position: relative !important;
   z-index: 2147483647 !important;
   cursor: pointer !important;
+  margin-top: 0 !important;
 }
 
 [class*="titlebar_"] [class*="MenuButton_"],
@@ -128,6 +143,16 @@ a {
 }
 
 /* Maximized Window Titlebar Interactivity Protections */
+.Maximized ._3s0lkohH8wU2do0K1il28Y,
+.Maximized ._1Ky59qmywxOUtNcI1cgmkX,
+.Maximized ._2Lu3d-5qLmW4i19ysTt2jT,
+.Maximized ._2UyOBeiSdBayaFdRa39N2O,
+.Maximized .bSKGlAJG2UVWTsntEJY2v,
+html.Maximized ._3s0lkohH8wU2do0K1il28Y,
+body.Maximized ._3s0lkohH8wU2do0K1il28Y,
+html.Maximized ._1Ky59qmywxOUtNcI1cgmkX,
+html.Maximized ._2Lu3d-5qLmW4i19ysTt2jT,
+html.Maximized .bSKGlAJG2UVWTsntEJY2v,
 [class*="titlebar_IsMaximized_"] [class*="titlebar_MenuBar_"],
 [class*="isMaximized"] [class*="titlebar_MenuBar_"],
 .maximized [class*="titlebar_MenuBar_"],
@@ -138,9 +163,18 @@ a {
   -webkit-app-region: no-drag !important;
   pointer-events: auto !important;
   z-index: 2147483647 !important;
-  margin-top: 4px !important;
+  margin-top: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
 }
 
+.Maximized ._3s0lkohH8wU2do0K1il28Y *,
+.Maximized ._1Ky59qmywxOUtNcI1cgmkX *,
+.Maximized ._2Lu3d-5qLmW4i19ysTt2jT *,
+.Maximized ._2UyOBeiSdBayaFdRa39N2O *,
+.Maximized .bSKGlAJG2UVWTsntEJY2v *,
+html.Maximized ._3s0lkohH8wU2do0K1il28Y *,
+body.Maximized ._3s0lkohH8wU2do0K1il28Y *,
 [class*="titlebar_IsMaximized_"] [class*="titlebar_MenuBar_"] > *,
 [class*="isMaximized"] [class*="titlebar_MenuBar_"] > *,
 .maximized [class*="titlebar_MenuBar_"] > *,
@@ -181,6 +215,7 @@ a {
 }
 
 /* Ensure window drag region never overlays interactive buttons */
+._30vB9DdsPK7VrZAbb5Q1Av,
 [class*="WindowDragArea_"],
 [class*="titlebar_WindowDragArea_"],
 [class*="drag_area"],
@@ -190,6 +225,7 @@ a {
 }
 
 /* Window controls (minimize, maximize, close) */
+.qP17eBPXkfezFfexZ4hC3,
 [class*="WindowControls_"],
 [class*="titlebar_WindowControls_"] {
   -webkit-app-region: no-drag !important;
@@ -197,6 +233,7 @@ a {
   z-index: 2147483647 !important;
 }
 
+._1-9sir4j_KQiMqdkZjQN0u,
 [class*="TitleBarControls_"],
 [class*="titlebarcontrols_"] {
   -webkit-app-region: no-drag !important;
@@ -206,6 +243,12 @@ a {
 }
 
 /* Dropdown popups & context menus: Full RTL aligned */
+._3pofGqV0buiKAfMPEs3_82,
+._2yAm5LY_eu-Vg_52l0HFlM,
+._2jXHP0742MyApMUVUM8IFn,
+._1JE5G7_FNm2SRDEEnOWMVv,
+._14wqdluDeDnnEcg3OSLEmd,
+._3ctisZH6WXgLVlYQqADdfR,
 [class*="titlebar_MenuPopup_"],
 [class*="MenuPopup_"],
 [class*="menu_popup_"],
@@ -217,7 +260,6 @@ a {
 [class*="DropdownPopup_"] {
   direction: rtl !important;
   text-align: start !important;
-  position: fixed !important;
   z-index: 2147483647 !important;
   -webkit-app-region: no-drag !important;
   pointer-events: auto !important;
