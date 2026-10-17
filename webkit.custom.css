@@ -380,74 +380,122 @@ html[dir="rtl"] .friends_header_ctn .manage_friends_btn {
 }
 
 /* ------------------------------------------------------------------ */
-/* Precise Workshop & Market RTL Grid Overrides                       */
+
+/* ------------------------------------------------------------------ */
+/* Precise Workshop, Market & Discussions RTL Layout Overrides        */
 /* ------------------------------------------------------------------ */
 
-/* Workshop Home 4-Column Grid: prevent 4th card dropping */
+/* --- Steam Workshop Home --- */
 html[dir="rtl"] .browseApps {
-  display: flex !important;
-  flex-direction: row-reverse !important;
-  justify-content: space-between !important;
-  align-items: flex-start !important;
+  display: block !important;
+  direction: rtl !important;
 }
 
-html[dir="rtl"] .workshopAppsSort {
-  float: none !important;
-  width: 180px !important;
-  flex: 0 0 180px !important;
+html[dir="rtl"] .browseAppsTitleContainer {
+  direction: rtl !important;
+  text-align: start !important;
+  overflow: hidden !important;
+  padding: 10px !important;
+}
+
+html[dir="rtl"] .searchApps {
+  float: left !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] input.searchAppsInput {
+  right: 6px !important;
+  left: auto !important;
   direction: rtl !important;
   text-align: start !important;
 }
 
-html[dir="rtl"] .workshopApps {
-  float: none !important;
-  width: 740px !important;
-  flex: 0 0 740px !important;
-  direction: rtl !important;
-  box-sizing: border-box !important;
+html[dir="rtl"] .searchAppImage {
+  left: 7px !important;
+  right: auto !important;
 }
 
-html[dir="rtl"] .workshop_game_capsule,
-html[dir="rtl"] .workshopApps .workshop_game_capsule {
+html[dir="rtl"] .browseAppsTitle {
   float: right !important;
-  margin-left: 12px !important;
-  margin-right: 0 !important;
-  margin-bottom: 12px !important;
+  text-align: start !important;
+  direction: rtl !important;
 }
 
-html[dir="rtl"] .workshop_game_capsule:nth-child(4n),
-html[dir="rtl"] .workshopApps .workshop_game_capsule:nth-child(4n) {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+html[dir="rtl"] .workshopAppsSort {
+  float: right !important;
+  width: 180px !important;
+  direction: rtl !important;
+  text-align: start !important;
 }
 
-/* Workshop item card details */
-html[dir="rtl"] .workshop_game_capsule .details {
+html[dir="rtl"] .workshopAppsSort .browseOption {
+  text-align: start !important;
+  direction: rtl !important;
+  margin-inline-end: 0 !important;
+}
+
+html[dir="rtl"] .workshopApps {
+  float: right !important;
+  width: 740px !important;
+  padding: 10px 10px 0 10px !important;
+  direction: rtl !important;
+  box-sizing: content-box !important;
+}
+
+html[dir="rtl"] .workshopAppsRow {
+  clear: both !important;
+  overflow: hidden !important;
+  margin: 10px 0 !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .workshopApps .app {
+  float: right !important;
+  margin: 0 5px 10px 5px !important;
+  width: 175px !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .workshopApps .appNumItems {
   direction: rtl !important;
   text-align: center !important;
-  unicode-bidi: plaintext !important;
 }
 
-/* Community Market: flip sidebar and table columns to prevent overlap */
+/* --- Steam Community Market --- */
 html[dir="rtl"] #sideBar {
   float: left !important;
   margin-left: 0 !important;
-  margin-right: 16px !important;
+  margin-right: 20px !important;
   width: 295px !important;
   direction: rtl !important;
   text-align: start !important;
 }
 
+html[dir="rtl"] #mainContents {
+  direction: rtl !important;
+  text-align: start !important;
+  float: none !important;
+  max-width: none !important;
+}
+
+html[dir="rtl"] #myMarketTabs {
+  direction: rtl !important;
+  padding: 9px 0 0 15px !important;
+}
+
+html[dir="rtl"] #sellListings {
+  direction: rtl !important;
+  text-align: start !important;
+  float: none !important;
+  max-width: none !important;
+}
+
 html[dir="rtl"] #popularItems,
-html[dir="rtl"] #mainContents,
-html[dir="rtl"] #sellListings,
-html[dir="rtl"] #myMarketTabs,
-html[dir="rtl"] .market_listing_table {
-  float: right !important;
+html[dir="rtl"] #searchResults {
+  direction: rtl !important;
+  text-align: start !important;
+  margin-left: 315px !important;
   margin-right: 0 !important;
-  margin-left: 16px !important;
-  max-width: calc(100% - 320px) !important;
-  box-sizing: border-box !important;
 }
 
 html[dir="rtl"] .market_tab_well_tabs {
@@ -461,17 +509,109 @@ html[dir="rtl"] .market_tab_well_tab {
   float: right !important;
 }
 
-/* English item names in market listings stay LTR start-aligned */
 html[dir="rtl"] .market_listing_item_name_block,
 html[dir="rtl"] .market_listing_item_name,
 html[dir="rtl"] .market_listing_game_name {
-  text-align: start !important;
   direction: ltr !important;
+  text-align: start !important;
   unicode-bidi: plaintext !important;
 }
 
 html[dir="rtl"] .market_listing_price_listings_block {
-  text-align: start !important;
+  float: left !important;
   direction: ltr !important;
   unicode-bidi: isolate !important;
+}
+
+/* --- Steam Discussions --- */
+html[dir="rtl"] .steam_discussions_intro {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .forum_list_ctn .forum_list_left {
+  float: right !important;
+  width: 608px !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .forum_list_ctn .forum_list_right {
+  float: left !important;
+  width: 289px !important;
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .discussions_view_more_link {
+  float: left !important;
+}
+
+html[dir="rtl"] .discussions_forumlist_icon {
+  float: right !important;
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] .discussions_forumlist_forumname {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .discussions_forumlist_topiccount {
+  float: left !important;
+  width: 140px !important;
+  padding-left: 16px !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+}
+
+html[dir="rtl"] .discussions_forumlist_lastpost {
+  float: left !important;
+  text-align: start !important;
+  margin-left: 12px !important;
+  margin-right: 0 !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .discussions_forumlist_header .discussions_forumlist_topiccount,
+html[dir="rtl"] .discussions_forumlist_header .discussions_forumlist_lastpost {
+  float: left !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] a.recent_game_discussion {
+  float: right !important;
+  margin-left: 16px !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] a.recent_game_discussion.last {
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .recent_game_discussion .playerAvatar {
+  float: right !important;
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] .recent_game_discussion .recent_game_discussions_unread_indicator {
+  float: left !important;
+  margin-right: 8px !important;
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .discussions_tab_message {
+  float: right !important;
+  padding-right: 14px !important;
+  padding-left: 0 !important;
+}
+
+html[dir="rtl"] .global_discussion_search_ctn {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] input.discussionSearchText {
+  direction: rtl !important;
+  text-align: start !important;
 }
