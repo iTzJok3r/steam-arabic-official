@@ -47082,6 +47082,12 @@
 
   // Steam Discussions
   // Market Beta & Listings
+  "popular items": "العناصر الشائعة",
+  "Newly listed": "أُدرجت حديثًا",
+  "newly listed": "أُدرجت حديثًا",
+  "Recently sold": "بيعت مؤخرًا",
+  "recently sold": "بيعت مؤخرًا",
+  "Quantity": "الكمية",
   "We're currently beta testing areas of the Market like": "نقوم حاليًا باختبار تجريبي لأقسام من السوق مثل",
   "item pages": "صفحات العناصر",
   "advanced search": "البحث المتقدم",
