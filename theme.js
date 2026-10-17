@@ -47082,6 +47082,33 @@
 
   // Steam Discussions
   // Market Beta & Listings
+  "Friend Activity Settings": "إعدادات نشاط الأصدقاء",
+  "friend activity settings": "إعدادات نشاط الأصدقاء",
+  "My Activity": "نشاطي",
+  "my activity": "نشاطي",
+  "TAG WITH GAME": "الإشارة إلى لعبة",
+  "Tag with game": "الإشارة إلى لعبة",
+  "Tag with Game": "الإشارة إلى لعبة",
+  "Tag With Game": "الإشارة إلى لعبة",
+  "search for friends or play": "ابحث عن أصدقاء أو ألعاب...",
+  "search for friends or games": "ابحث عن أصدقاء أو ألعاب...",
+  "Search for friends or games": "ابحث عن أصدقاء أو ألعاب...",
+  "view my profile": "عرض ملفي الشخصي",
+  "Edit my Profile": "تعديل ملفي الشخصي",
+  "Edit My Profile": "تعديل ملفي الشخصي",
+  "edit my profile": "تعديل ملفي الشخصي",
+  "My Workshop": "ورشتي",
+  "my workshop": "ورشتي",
+  "My Comment History": "سجل تعليقاتي",
+  "my comment history": "سجل تعليقاتي",
+  "View Groups": "عرض المجموعات",
+  "view groups": "عرض المجموعات",
+  "Friends In-Game": "الأصدقاء داخل اللعبة",
+  "Friends Online": "الأصدقاء المتصلون",
+  "Search within listings...": "البحث في المخزون...",
+  "search within listings": "البحث في المخزون...",
+  "Start typing the name of an item here to filter by name": "ابدأ بكتابة اسم العنصر هنا لتصفيته",
+  "Start typing the name of an item here to filter by name.": "ابدأ بكتابة اسم العنصر هنا لتصفيته.",
   "popular items": "العناصر الشائعة",
   "Newly listed": "أُدرجت حديثًا",
   "newly listed": "أُدرجت حديثًا",
@@ -47281,6 +47308,10 @@
   const UI_PATTERNS = [
     // Reviews & Community metrics
     // Workshop & Market patterns
+    // Friend Activity & Groups patterns
+    { re: /^View all\s+([\d,]+)\s+Groups$/i, rep: 'عرض جميع المجموعات ($1)' },
+    { re: /^([\d,]+)\s+Online$/i, rep: '$1 متصل' },
+    { re: /^([\d,]+)\s+In-Game$/i, rep: '$1 داخل اللعبة' },
     { re: /^Showing\s+([\d,]+)\s*-\s*([\d,]+)\s+of\s+([\d,]+)\s+results$/i, rep: 'عرض $1-$2 من أصل $3 نتيجة' },
     { re: /^Showing\s+([\d,]+)\s+of\s+([\d,]+)\s+results$/i, rep: 'عرض $1 من أصل $2 نتيجة' },
     { re: /^([\d,]+)\s+Items$/i, rep: '$1 عنصر' },

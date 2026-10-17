@@ -637,3 +637,42 @@ html[dir="rtl"] input.discussionSearchText {
   direction: rtl !important;
   text-align: start !important;
 }
+
+/* --- Friend Activity & Profile Sidebar Layout --- */
+html[dir="rtl"] .btn_profile_action {
+  margin-top: 8px !important;
+  display: inline-block !important;
+  clear: both !important;
+}
+
+html[dir="rtl"] .profile_small_header_actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  align-items: flex-start !important;
+}
+
+html[dir="rtl"] .blotter_status_post_ctn {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* --- Inventory Filter & Search RTL --- */
+html[dir="rtl"] .filter_ctn {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .filter_control_ctn {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] input.filter_search_box {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .filter_label {
+  direction: rtl !important;
+  text-align: start !important;
+}
