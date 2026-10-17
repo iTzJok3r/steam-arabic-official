@@ -657,7 +657,379 @@ html[dir="rtl"] .blotter_status_post_ctn {
   text-align: start !important;
 }
 
-/* --- Inventory Filter & Search RTL --- */
+/* ------------------------------------------------------------------ */
+/* Steam Inventory, Trading & Economy Full RTL Layout Normalization    */
+/* ------------------------------------------------------------------ */
+
+/* 1. Main Inventory Frame & Two-Column Layout */
+html[dir="rtl"] .view_inventory_page,
+html[dir="rtl"] .inventory_page,
+html[dir="rtl"] #tabcontent_inventory {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* Item grid container: in RTL, sits on the right (start side) */
+html[dir="rtl"] .view_inventory_page .inventory_page_left {
+  float: right !important;
+  width: 528px !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 16px !important;
+  margin-right: 0 !important;
+  margin-left: 16px !important;
+}
+
+/* Item details pane: in RTL, sits on the left (end side) */
+html[dir="rtl"] .view_inventory_page .inventory_page_right {
+  float: left !important;
+  width: 370px !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin-inline-start: 16px !important;
+  margin-inline-end: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  position: relative !important;
+}
+
+/* Clearfix for inventory container */
+html[dir="rtl"] .view_inventory_page:after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+/* 2. Inventory Item Slots Grid */
+html[dir="rtl"] .itemHolder {
+  float: right !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 6px !important;
+  margin-right: 0 !important;
+  margin-left: 6px !important;
+  margin-bottom: 6px !important;
+  position: relative !important;
+}
+
+/* Item links, currency amounts, and badges */
+html[dir="rtl"] a.inventory_item_link {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .item_currency_amount {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+html[dir="rtl"] .listed_item_badge_ctn,
+html[dir="rtl"] .provisional_item_badge_ctn {
+  left: auto !important;
+  right: 0px !important;
+  flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] .listed_item_caption,
+html[dir="rtl"] .provisional_item_caption {
+  margin-left: 0 !important;
+  margin-right: 20px !important;
+  padding: 2px 20px 2px 8px !important;
+}
+
+/* 3. Games List Tabs (Game selection header) */
+html[dir="rtl"] .games_list_tabs_ctn,
+html[dir="rtl"] .games_list_tabs {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .games_list_tab,
+html[dir="rtl"] a.games_list_tab {
+  float: right !important;
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .games_list_tab_icon {
+  float: right !important;
+  padding-right: 0 !important;
+  padding-left: 8px !important;
+}
+
+html[dir="rtl"] .games_list_tab_name {
+  float: right !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .games_list_tab_number {
+  float: right !important;
+  padding-left: 0 !important;
+  padding-right: 4px !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+html[dir="rtl"] .games_list_tab_failed {
+  float: left !important;
+  padding-left: 0 !important;
+  padding-right: 8px !important;
+}
+
+html[dir="rtl"] .games_list_tab_separator {
+  float: right !important;
+}
+
+html[dir="rtl"] .games_list_tab_row_separator {
+  clear: right !important;
+  float: right !important;
+}
+
+html[dir="rtl"] .games_list_tab.first_tab,
+html[dir="rtl"] a.games_list_tab.first_tab {
+  border-top-right-radius: 3px !important;
+  border-top-left-radius: 0 !important;
+}
+
+html[dir="rtl"] .games_list_tab.fourth_tab,
+html[dir="rtl"] a.games_list_tab.fourth_tab {
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 0 !important;
+}
+
+/* 4. Sub-category context selector dropdown */
+html[dir="rtl"] #context_selector {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] #contextselect_trigger {
+  direction: rtl !important;
+  text-align: start !important;
+  padding-right: 12px !important;
+  padding-left: 30px !important;
+  background-position: left 10px center !important;
+}
+
+html[dir="rtl"] #contextselect_options {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* 5. Inventory Pagination & Controls */
+html[dir="rtl"] #inventory_pagecontrols {
+  float: left !important;
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] #inventory_pagecontrols .pagecontrol_element {
+  float: right !important;
+}
+
+html[dir="rtl"] .pagecontrol_element.pagecounts {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+/* 6. Item Details, Hover Cards & Market Actions */
+html[dir="rtl"] .inventory_iteminfo {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .item_desc_content {
+  direction: rtl !important;
+  text-align: start !important;
+  padding: 238px 11px 11px 11px !important;
+}
+
+html[dir="rtl"] .item_desc_content .item_desc_description {
+  direction: rtl !important;
+  text-align: start !important;
+  padding-right: 0 !important;
+  padding-left: 8px !important;
+}
+
+html[dir="rtl"] .item_desc_descriptors {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .item_desc_game_info {
+  direction: rtl !important;
+  text-align: start !important;
+  padding-left: 0 !important;
+  padding-right: 40px !important;
+}
+
+html[dir="rtl"] .item_desc_game_info .item_desc_game_icon {
+  left: auto !important;
+  right: 0 !important;
+}
+
+html[dir="rtl"] .item_market_actions {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .hover_item_name,
+html[dir="rtl"] .hover_item_name_small {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .fraud_warning {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .fraud_warning_image {
+  float: right !important;
+  padding-right: 0 !important;
+  padding-left: 8px !important;
+}
+
+html[dir="rtl"] .market_restrictions img {
+  float: right !important;
+  margin-right: 0 !important;
+  margin-left: 8px !important;
+}
+
+/* 7. Market Sell Dialog & Modal Contents */
+html[dir="rtl"] #market_sell_dialog,
+html[dir="rtl"] .market_dialog_contents {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .market_sell_dialog_input_area {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] #market_sell_dialog_accept,
+html[dir="rtl"] #market_sell_dialog_buyback_buttons {
+  float: left !important;
+  margin: 0.4em 1em 0 0 !important;
+}
+
+html[dir="rtl"] #market_sell_dialog_buyback_details_wrapper {
+  float: right !important;
+}
+
+html[dir="rtl"] .market_sell_dialog_input_multiline {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] #market_sell_buyerprice,
+html[dir="rtl"] #market_sell_currency_input {
+  direction: ltr !important;
+  text-align: start !important;
+  unicode-bidi: isolate !important;
+}
+
+/* 8. Trade Offers & Trade Area */
+html[dir="rtl"] .trade_area,
+html[dir="rtl"] .trade_box,
+html[dir="rtl"] .trade_item_box {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .trade_left {
+  float: right !important;
+}
+
+html[dir="rtl"] .trade_right {
+  float: left !important;
+}
+
+html[dir="rtl"] .trade_item_box {
+  padding: 6px 6px 0 0 !important;
+}
+
+html[dir="rtl"] .trade_item_box .itemHolder {
+  float: right !important;
+  margin-left: 6px !important;
+  margin-right: 0 !important;
+}
+
+/* 9. Steam Profile Two-Column Layout & Badges */
+html[dir="rtl"] .profile_leftcol {
+  float: right !important;
+  width: 652px !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] .profile_rightcol,
+html[dir="rtl"] #rightContents {
+  float: left !important;
+  width: 268px !important;
+  direction: rtl !important;
+  text-align: start !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] .profile_content:after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+html[dir="rtl"] .profile_header_content {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .playerAvatar.profile_header_size {
+  float: right !important;
+  margin-right: 0 !important;
+  margin-left: 18px !important;
+}
+
+html[dir="rtl"] .profile_header_badgeinfo {
+  float: left !important;
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .profile_header_actions {
+  float: left !important;
+}
+
+/* Badges Page */
+html[dir="rtl"] .badge_row {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .badge_row_inner {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+html[dir="rtl"] .badge_current {
+  float: right !important;
+  margin-left: 15px !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] .badge_progress {
+  float: left !important;
+}
+
+html[dir="rtl"] .badge_cards_to_collect {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+/* 10. Inventory Filter & Search Controls */
 html[dir="rtl"] .filter_ctn {
   direction: rtl !important;
   text-align: start !important;
@@ -676,3 +1048,21 @@ html[dir="rtl"] .filter_label {
   direction: rtl !important;
   text-align: start !important;
 }
+
+html[dir="rtl"] .filter_tag_button {
+  direction: rtl !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] .filter_tag_button_content {
+  direction: rtl !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+
+html[dir="rtl"] .econ_tag_count {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
